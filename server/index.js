@@ -22,6 +22,7 @@ app.use(limiter);
 
 // Mock Data
 const mockProducts = [
+  // Electronics
   {
     _id: '1',
     name: 'Wireless Bluetooth Headphones',
@@ -48,30 +49,6 @@ const mockProducts = [
   },
   {
     _id: '3',
-    name: 'Organic Cotton T-Shirt',
-    description: 'Comfortable and eco-friendly cotton t-shirt',
-    price: 29.99,
-    category: 'Clothing',
-    image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400',
-    stock: 100,
-    rating: 4.1,
-    numReviews: 56,
-    featured: false
-  },
-  {
-    _id: '4',
-    name: 'Stainless Steel Water Bottle',
-    description: 'Keep your drinks cold for 24 hours with this premium bottle',
-    price: 24.99,
-    category: 'Home & Garden',
-    image: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400',
-    stock: 75,
-    rating: 4.7,
-    numReviews: 203,
-    featured: true
-  },
-  {
-    _id: '5',
     name: 'Wireless Charging Pad',
     description: 'Fast wireless charging for all compatible devices',
     price: 39.99,
@@ -83,17 +60,262 @@ const mockProducts = [
     featured: false
   },
   {
+    _id: '4',
+    name: 'Bluetooth Speaker',
+    description: 'Portable speaker with deep bass and long battery life',
+    price: 59.99,
+    category: 'Electronics',
+    image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400',
+    stock: 60,
+    rating: 4.6,
+    numReviews: 110,
+    featured: false
+  },
+  // Clothing
+  {
+    _id: '5',
+    name: 'Organic Cotton T-Shirt',
+    description: 'Comfortable and eco-friendly cotton t-shirt',
+    price: 29.99,
+    category: 'Clothing',
+    image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400',
+    stock: 100,
+    rating: 4.1,
+    numReviews: 56,
+    featured: false
+  },
+  {
     _id: '6',
-    name: 'Leather Wallet',
-    description: 'Premium leather wallet with RFID protection',
+    name: 'Classic Blue Jeans',
+    description: 'Stylish and durable blue jeans for everyday wear',
     price: 49.99,
-    category: 'Accessories',
-    image: 'https://images.unsplash.com/photo-1627123424574-724758594e93?w=400',
+    category: 'Clothing',
+    image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=400',
+    stock: 80,
+    rating: 4.6,
+    numReviews: 102,
+    featured: false
+  },
+  {
+    _id: '7',
+    name: 'Hooded Sweatshirt',
+    description: 'Warm and cozy hoodie for all seasons',
+    price: 39.99,
+    category: 'Clothing',
+    image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400',
+    stock: 70,
+    rating: 4.4,
+    numReviews: 80,
+    featured: false
+  },
+  {
+    _id: '8',
+    name: 'Summer Dress',
+    description: 'Lightweight and stylish dress for summer',
+    price: 34.99,
+    category: 'Clothing',
+    image: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=400',
+    stock: 60,
+    rating: 4.7,
+    numReviews: 95,
+    featured: true
+  },
+  // Books
+  {
+    _id: '9',
+    name: 'The Art of Coding',
+    description: 'A must-read book for aspiring developers',
+    price: 19.99,
+    category: 'Books',
+    image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400',
+    stock: 200,
+    rating: 4.8,
+    numReviews: 210,
+    featured: true
+  },
+  {
+    _id: '10',
+    name: 'Mindful Living',
+    description: 'A guide to living a mindful and peaceful life',
+    price: 14.99,
+    category: 'Books',
+    image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?w=400',
+    stock: 150,
+    rating: 4.5,
+    numReviews: 120,
+    featured: false
+  },
+  {
+    _id: '11',
+    name: 'Business Mastery',
+    description: 'Strategies for success in business and entrepreneurship',
+    price: 24.99,
+    category: 'Books',
+    image: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=400',
+    stock: 90,
+    rating: 4.3,
+    numReviews: 75,
+    featured: false
+  },
+  {
+    _id: '12',
+    name: 'Healthy Recipes',
+    description: 'Delicious and healthy recipes for every day',
+    price: 17.99,
+    category: 'Books',
+    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400',
+    stock: 120,
+    rating: 4.6,
+    numReviews: 98,
+    featured: false
+  },
+  // Home & Garden
+  {
+    _id: '13',
+    name: 'Stainless Steel Water Bottle',
+    description: 'Keep your drinks cold for 24 hours with this premium bottle',
+    price: 24.99,
+    category: 'Home & Garden',
+    image: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400',
+    stock: 75,
+    rating: 4.7,
+    numReviews: 203,
+    featured: true
+  },
+  {
+    _id: '14',
+    name: 'Aromatic Scented Candle',
+    description: 'Relax with this long-lasting scented candle',
+    price: 12.99,
+    category: 'Home & Garden',
+    image: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400',
+    stock: 90,
+    rating: 4.5,
+    numReviews: 60,
+    featured: false
+  },
+  {
+    _id: '15',
+    name: 'Indoor Plant Set',
+    description: 'Bring nature indoors with this beautiful plant set',
+    price: 44.99,
+    category: 'Home & Garden',
+    image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=400',
+    stock: 40,
+    rating: 4.8,
+    numReviews: 88,
+    featured: false
+  },
+  {
+    _id: '16',
+    name: 'Decorative Throw Pillow',
+    description: 'Add comfort and style to your home',
+    price: 19.99,
+    category: 'Home & Garden',
+    image: 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=400',
     stock: 60,
     rating: 4.4,
-    numReviews: 94,
+    numReviews: 70,
     featured: false
-  }
+  },
+  // Sports
+  {
+    _id: '17',
+    name: 'Yoga Mat',
+    description: 'Non-slip yoga mat for all levels',
+    price: 29.99,
+    category: 'Sports',
+    image: 'https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400',
+    stock: 80,
+    rating: 4.7,
+    numReviews: 130,
+    featured: true
+  },
+  {
+    _id: '18',
+    name: 'Adjustable Dumbbells',
+    description: 'Perfect for home workouts and strength training',
+    price: 89.99,
+    category: 'Sports',
+    image: 'https://images.unsplash.com/photo-1517960413843-0aee8e2d471c?w=400',
+    stock: 50,
+    rating: 4.6,
+    numReviews: 90,
+    featured: false
+  },
+  {
+    _id: '19',
+    name: 'Football',
+    description: 'Durable and high-quality football for all ages',
+    price: 25.99,
+    category: 'Sports',
+    image: 'https://images.unsplash.com/photo-1505843273132-bc5c6e6f4a59?w=400',
+    stock: 100,
+    rating: 4.5,
+    numReviews: 110,
+    featured: false
+  },
+  {
+    _id: '20',
+    name: 'Tennis Racket',
+    description: 'Lightweight racket for beginners and pros',
+    price: 59.99,
+    category: 'Sports',
+    image: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=400',
+    stock: 60,
+    rating: 4.4,
+    numReviews: 75,
+    featured: false
+  },
+  // Beauty
+  {
+    _id: '21',
+    name: 'Moisturizing Face Cream',
+    description: 'Hydrate and nourish your skin with this face cream',
+    price: 22.99,
+    category: 'Beauty',
+    image: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=400',
+    stock: 70,
+    rating: 4.6,
+    numReviews: 95,
+    featured: true
+  },
+  {
+    _id: '22',
+    name: 'Natural Lip Balm',
+    description: 'Keep your lips soft and smooth',
+    price: 7.99,
+    category: 'Beauty',
+    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400',
+    stock: 120,
+    rating: 4.5,
+    numReviews: 60,
+    featured: false
+  },
+  {
+    _id: '23',
+    name: 'Aloe Vera Gel',
+    description: 'Soothing gel for skin hydration and repair',
+    price: 12.99,
+    category: 'Beauty',
+    image: 'https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=400',
+    stock: 90,
+    rating: 4.7,
+    numReviews: 80,
+    featured: false
+  },
+  {
+    _id: '24',
+    name: 'Herbal Shampoo',
+    description: 'Gentle shampoo for healthy, shiny hair',
+    price: 15.99,
+    category: 'Beauty',
+    image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=400',
+    stock: 60,
+    rating: 4.4,
+    numReviews: 70,
+    featured: false
+  },
 ];
 
 const mockUsers = [
