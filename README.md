@@ -2,6 +2,9 @@
 
 A full-stack e-commerce website built with React, Node.js, Express, and MongoDB. Features include user authentication, product management, shopping cart, payment processing, and order management.
 
+![Uploading image.png…]()
+
+
 ## ✨ Features
 
 ### 🔐 Authentication & User Management
