@@ -67,7 +67,10 @@ const Products = () => {
     }
     
     // Category filter
-    if (selectedCategory && product.category !== selectedCategory) {
+    if (
+      selectedCategory &&
+      product.category.toLowerCase().replace(/\s+/g, '') !== selectedCategory.toLowerCase().replace(/\s+/g, '')
+    ) {
       return false;
     }
     
