@@ -7,6 +7,8 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+app.set('trust proxy', 1);
+
 // Middleware
 app.use(helmet());
 app.use(cors());
@@ -71,9 +73,21 @@ const mockProducts = [
     numReviews: 110,
     featured: false
   },
-  // Clothing
   {
     _id: '5',
+    name: 'Noise Cancelling Earbuds',
+    description: 'Compact earbuds with active noise cancellation',
+    price: 79.99,
+    category: 'Electronics',
+    image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=400',
+    stock: 70,
+    rating: 4.4,
+    numReviews: 85,
+    featured: false
+  },
+  // Clothing
+  {
+    _id: '6',
     name: 'Organic Cotton T-Shirt',
     description: 'Comfortable and eco-friendly cotton t-shirt',
     price: 29.99,
@@ -85,7 +99,7 @@ const mockProducts = [
     featured: false
   },
   {
-    _id: '6',
+    _id: '7',
     name: 'Classic Blue Jeans',
     description: 'Stylish and durable blue jeans for everyday wear',
     price: 49.99,
@@ -97,7 +111,7 @@ const mockProducts = [
     featured: false
   },
   {
-    _id: '7',
+    _id: '8',
     name: 'Hooded Sweatshirt',
     description: 'Warm and cozy hoodie for all seasons',
     price: 39.99,
@@ -109,7 +123,7 @@ const mockProducts = [
     featured: false
   },
   {
-    _id: '8',
+    _id: '9',
     name: 'Summer Dress',
     description: 'Lightweight and stylish dress for summer',
     price: 34.99,
@@ -120,9 +134,21 @@ const mockProducts = [
     numReviews: 95,
     featured: true
   },
+  {
+    _id: '10',
+    name: 'Woolen Scarf',
+    description: 'Soft and warm scarf for winter',
+    price: 19.99,
+    category: 'Clothing',
+    image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=400',
+    stock: 50,
+    rating: 4.5,
+    numReviews: 60,
+    featured: false
+  },
   // Books
   {
-    _id: '9',
+    _id: '11',
     name: 'The Art of Coding',
     description: 'A must-read book for aspiring developers',
     price: 19.99,
@@ -134,7 +160,7 @@ const mockProducts = [
     featured: true
   },
   {
-    _id: '10',
+    _id: '12',
     name: 'Mindful Living',
     description: 'A guide to living a mindful and peaceful life',
     price: 14.99,
@@ -146,7 +172,7 @@ const mockProducts = [
     featured: false
   },
   {
-    _id: '11',
+    _id: '13',
     name: 'Business Mastery',
     description: 'Strategies for success in business and entrepreneurship',
     price: 24.99,
@@ -158,7 +184,7 @@ const mockProducts = [
     featured: false
   },
   {
-    _id: '12',
+    _id: '14',
     name: 'Healthy Recipes',
     description: 'Delicious and healthy recipes for every day',
     price: 17.99,
@@ -169,9 +195,21 @@ const mockProducts = [
     numReviews: 98,
     featured: false
   },
+  {
+    _id: '15',
+    name: 'Science for Everyone',
+    description: 'An accessible introduction to science topics',
+    price: 21.99,
+    category: 'Books',
+    image: 'https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=400',
+    stock: 80,
+    rating: 4.7,
+    numReviews: 85,
+    featured: false
+  },
   // Home & Garden
   {
-    _id: '13',
+    _id: '16',
     name: 'Stainless Steel Water Bottle',
     description: 'Keep your drinks cold for 24 hours with this premium bottle',
     price: 24.99,
@@ -183,7 +221,7 @@ const mockProducts = [
     featured: true
   },
   {
-    _id: '14',
+    _id: '17',
     name: 'Aromatic Scented Candle',
     description: 'Relax with this long-lasting scented candle',
     price: 12.99,
@@ -195,7 +233,7 @@ const mockProducts = [
     featured: false
   },
   {
-    _id: '15',
+    _id: '18',
     name: 'Indoor Plant Set',
     description: 'Bring nature indoors with this beautiful plant set',
     price: 44.99,
@@ -207,7 +245,7 @@ const mockProducts = [
     featured: false
   },
   {
-    _id: '16',
+    _id: '19',
     name: 'Decorative Throw Pillow',
     description: 'Add comfort and style to your home',
     price: 19.99,
@@ -218,9 +256,21 @@ const mockProducts = [
     numReviews: 70,
     featured: false
   },
+  {
+    _id: '20',
+    name: 'Ceramic Vase',
+    description: 'Elegant vase for your favorite flowers',
+    price: 27.99,
+    category: 'Home & Garden',
+    image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=400',
+    stock: 50,
+    rating: 4.6,
+    numReviews: 65,
+    featured: false
+  },
   // Sports
   {
-    _id: '17',
+    _id: '21',
     name: 'Yoga Mat',
     description: 'Non-slip yoga mat for all levels',
     price: 29.99,
@@ -232,7 +282,7 @@ const mockProducts = [
     featured: true
   },
   {
-    _id: '18',
+    _id: '22',
     name: 'Adjustable Dumbbells',
     description: 'Perfect for home workouts and strength training',
     price: 89.99,
@@ -244,7 +294,7 @@ const mockProducts = [
     featured: false
   },
   {
-    _id: '19',
+    _id: '23',
     name: 'Football',
     description: 'Durable and high-quality football for all ages',
     price: 25.99,
@@ -256,7 +306,7 @@ const mockProducts = [
     featured: false
   },
   {
-    _id: '20',
+    _id: '24',
     name: 'Tennis Racket',
     description: 'Lightweight racket for beginners and pros',
     price: 59.99,
@@ -267,9 +317,21 @@ const mockProducts = [
     numReviews: 75,
     featured: false
   },
+  {
+    _id: '25',
+    name: 'Basketball',
+    description: 'Official size and weight basketball',
+    price: 29.99,
+    category: 'Sports',
+    image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=400',
+    stock: 70,
+    rating: 4.5,
+    numReviews: 80,
+    featured: false
+  },
   // Beauty
   {
-    _id: '21',
+    _id: '101',
     name: 'Moisturizing Face Cream',
     description: 'Hydrate and nourish your skin with this face cream',
     price: 22.99,
@@ -281,7 +343,7 @@ const mockProducts = [
     featured: true
   },
   {
-    _id: '22',
+    _id: '102',
     name: 'Natural Lip Balm',
     description: 'Keep your lips soft and smooth',
     price: 7.99,
@@ -293,7 +355,7 @@ const mockProducts = [
     featured: false
   },
   {
-    _id: '23',
+    _id: '103',
     name: 'Aloe Vera Gel',
     description: 'Soothing gel for skin hydration and repair',
     price: 12.99,
@@ -305,7 +367,7 @@ const mockProducts = [
     featured: false
   },
   {
-    _id: '24',
+    _id: '104',
     name: 'Herbal Shampoo',
     description: 'Gentle shampoo for healthy, shiny hair',
     price: 15.99,
